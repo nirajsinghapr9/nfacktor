@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/snack"
+    android:background="@color/white"
+    tools:context=".OtpActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/base"
+        app:layout_constraintBaseline_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="180dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/ic_log"
+            app:subtitleCentered="true" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:background="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <ImageView
+            android:id="@+id/otpLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_otp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"/>
+
+        <RelativeLayout
+            android:id="@+id/rel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/otpLogo">
+            <TextView
+                android:id="@+id/lbl1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OTP Verification"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="OTP sent"
+                android:drawableEnd="@drawable/ic_icons8_edit"
+                android:drawablePadding="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <com.poovam.pinedittextfield.LinePinField
+                android:id="@+id/etOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/number"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                android:textSelectHandle="@drawable/text_handle"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                app:highlightType="currentField"
+                app:isCursorEnabled="true"
+                app:lineThickness="1dp"
+                app:noOfFields="4" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:layout_below="@+id/rel">
+
+            <TextView
+                android:id="@+id/resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Didn't Recieve OTP ?"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/verify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/resend"
+                android:layout_margin="10dp"
+                android:padding="15sp"
+                android:text="Verify" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
